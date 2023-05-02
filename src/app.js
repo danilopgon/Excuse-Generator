@@ -1,5 +1,7 @@
 window.onload = () => {
-  //write your code here
+  document.getElementById("btn").addEventListener("click", () => {
+    document.getElementById("excuse").innerHTML = excuseGenerator();
+  });
 
   const randomNumber = () => {
     const random = Math.floor(Math.random() * 4);
@@ -7,15 +9,15 @@ window.onload = () => {
   };
 
   const excuseGenerator = () => {
-    let who = ["My cat", "My cousin", "Your raccoon", "The president"];
-    let action = ["ate", "shot at", "crushed", "smashed"];
-    let what = [
+    const who = ["My cat", "My cousin", "Your raccoon", "The president"];
+    const action = ["ate", "shot at", "crushed", "smashed"];
+    const what = [
       "my homework",
       "my computer",
       "my dreams",
       "the concept of time"
     ];
-    let when = [
+    const when = [
       "before lunch",
       "right on time",
       "during my sabbatical year",
@@ -26,6 +28,4 @@ window.onload = () => {
       what[randomNumber()]
     } ${when[randomNumber()]}`;
   };
-
-  document.querySelector("#excuse").innerHTML = excuseGenerator();
 };
